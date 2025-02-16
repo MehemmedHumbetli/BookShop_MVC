@@ -1,0 +1,72 @@
+﻿@model UserViewModel
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="p-5 rounded-4 shadow-lg w-50" 
+        style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);">
+
+        <h2 class="text-center mb-4 text-uppercase text-white fw-bold" style="font-family: 'Poppins', sans-serif; letter-spacing: 3px;">
+            <i class="fas fa-user-edit me-2"></i> Edit User
+        </h2>
+
+        <form asp-controller="User" asp-action="Update" method="post" enctype="multipart/form-data">
+            <input type="hidden" asp-for="User.Id"/>
+
+            <div class="mb-3">
+                <label asp-for="User.Name" class="form-label text-white">Name</label>
+                <input asp-for="User.Name" class="form-control p-3 rounded-3 text-white bg-dark border-0 shadow-sm"
+                    style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);" placeholder="Enter name" />
+            </div>
+            
+            <div class="mb-3">
+                <label asp-for="User.Surname" class="form-label text-white">Surname</label>
+                <input asp-for="User.Surname" class="form-control p-3 rounded-3 text-white bg-dark border-0 shadow-sm"
+                    style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);" placeholder="Enter surname" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="User.Age" class="form-label text-white">Age</label>
+                <input asp-for="User.Age" type="number" class="form-control p-3 rounded-3 text-white bg-dark border-0 shadow-sm"
+                    style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);" placeholder="Enter age" />
+            </div>
+            
+            <div class="mb-3">
+                <label asp-for="User.Gmail" class="form-label text-white">Gmail</label>
+                <input asp-for="User.Gmail" type="email" class="form-control p-3 rounded-3 text-white bg-dark border-0 shadow-sm"
+                    style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);" placeholder="Enter age" />
+            </div>
+
+            <div class="mb-4">
+                <label asp-for="User.ProfilePicturePath" class="form-label text-white">Profile Picture Path</label>
+                <input asp-for="User.ProfilePicturePath" class="form-control p-3 rounded-3 text-white bg-dark border-0 shadow-sm"
+                       style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);" placeholder="Enter age" />
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-success w-48 py-3 rounded-3 fw-bold text-uppercase"
+                    style="background: linear-gradient(135deg, #56ab2f, #a8e063); border: none; box-shadow: 0 4px 15px rgba(86, 171, 47, 0.3); transition: all 0.3s ease-in-out;"
+                    onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 20px rgba(86, 171, 47, 0.5)';"
+                    onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 15px rgba(86, 171, 47, 0.3)';">
+                    <i class="fas fa-save me-2"></i> Save
+                </button>
+
+                <a href="@Url.Action("Index", "User")" class="btn btn-secondary w-48 py-3 rounded-3 fw-bold text-uppercase"
+                    style="background: linear-gradient(135deg, #6a11cb, #2575fc); border: none; box-shadow: 0 4px 15px rgba(106, 17, 203, 0.3); transition: all 0.3s ease-in-out;"
+                    onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 20px rgba(106, 17, 203, 0.5)';"
+                    onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 15px rgba(106, 17, 203, 0.3)';">
+                    <i class="fas fa-arrow-left me-2"></i> Cancel
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function previewImage(event) {
+        var reader = new FileReader();
+        reader.onload = function(){
+            var output = document.getElementById('profilePreview');
+            output.src = reader.result;
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    }
+</script>

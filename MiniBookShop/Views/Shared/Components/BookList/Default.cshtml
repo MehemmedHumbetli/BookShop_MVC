@@ -1,0 +1,10 @@
+﻿@* @model BookListViewModel
+
+<section class="list-group">
+    @foreach (var item in Model.Books)
+    {
+        var css = "list-group-item";
+
+        <a style="cursor:pointer;" href="/book/index?bookId=@item.Id" class="@css">@item.Name</a>
+    }
+</section> *@

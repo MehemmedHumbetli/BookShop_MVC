@@ -1,0 +1,8 @@
+﻿CREATE TABLE Users (
+    Id INT PRIMARY KEY IDENTITY(1,1), 
+    Name NVARCHAR(100) NOT NULL,
+    Surname NVARCHAR(100) NOT NULL,
+    Age INT NOT NULL,
+    Gmail NVARCHAR(100) NOT NULL,
+    ProfilePicturePath NVARCHAR(255) NULL
+);

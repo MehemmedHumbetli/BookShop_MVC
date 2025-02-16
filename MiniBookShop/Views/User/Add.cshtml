@@ -1,0 +1,36 @@
+﻿@model UserViewModel
+<div class="rounded" style="box-shadow: 0px 0px 18px white">
+    <form action="add" method="post" class="bg-dark p-4 rounded shadow-lg">
+        <h2 class="text-center text-white mb-4">Add New User</h2>
+
+        <div class="form-group mb-3">
+            <label class="text-white">User Name</label>
+            <input asp-for="User.Name" type="text" class="form-control form-control-lg" placeholder="Enter user name" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label class="text-white">User Surname</label>
+            <input asp-for="User.Surname" type="text" class="form-control form-control-lg" placeholder="Enter user surname" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label class="text-white">User Age</label>
+            <input asp-for="User.Age" type="number" class="form-control form-control-lg" placeholder="Enter user age" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label class="text-white">User Gmail</label>
+            <input asp-for="User.Gmail" type="email" class="form-control form-control-lg" placeholder="Enter user Gmail" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label class="text-white">User Image</label>
+            <input asp-for="User.ProfilePicturePath" type="text" class="form-control form-control-lg" placeholder="Enter image path" />
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-success btn-lg btn-block mt-3 w-100" type="submit">Add User</button>
+        </div>
+    </form>
+
+</div>

@@ -1,0 +1,11 @@
+﻿CREATE TABLE Books (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(255) NOT NULL,
+    Author NVARCHAR(255) NOT NULL,
+    Genre NVARCHAR(255) NOT NULL,
+    Pages INT NOT NULL,
+    ReadCount INT NOT NULL,
+    Decription NVARCHAR(MAX),
+    ImagePath NVARCHAR(255),
+    Price INT NOT NULL DEFAULT 0
+);
