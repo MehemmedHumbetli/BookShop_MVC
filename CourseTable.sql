@@ -1,0 +1,7 @@
+﻿CREATE TABLE Courses (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    Name NVARCHAR(255) NOT NULL,
+    Duration INT NOT NULL,
+    Price INT NOT NULL,
+    Required_Skills NVARCHAR(MAX) NOT NULL
+);

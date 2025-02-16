@@ -10,7 +10,7 @@ namespace MiniBookShop.Application.Abstract
     public interface ICourseService
     {
         public List<Course> GetAll();
-        Book GetById(int id);
+        Course GetById(int id);
         void Add(Course course);
         void Update(Course course);
         void Delete(int courseId);
