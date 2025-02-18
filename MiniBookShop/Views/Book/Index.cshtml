@@ -148,7 +148,7 @@
                         <p><strong>ReadCount:</strong> @book.ReadCount</p>
                         <p style="color: #ffcc66"><strong>Price:</strong>@book.Price$</p>
                         <p class="description">@book.Decription</p>
-                        <a asp-action="AddToCart" asp-route-id="@book.Id" asp-controller="Cart" class="card-btn">Add To Cart</a>
+                        <a asp-action="AddToCart" asp-route-id="@book.Id" asp-route-type="book" asp-controller="Cart" class="card-btn">Add To Cart</a>
                         <a asp-action="Update" asp-route-id="@book.Id" asp-controller="Book" class="btn up-btn">Update</a>
                     </div>
                 </div>

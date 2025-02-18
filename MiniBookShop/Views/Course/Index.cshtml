@@ -146,8 +146,8 @@
                         <p><strong>Price:</strong> @course.Price</p>
                         <p><strong>Requierd Skills:</strong> @course.Required_Skills</p>
                         <p style="color: #ffcc66"><strong>Price:</strong>@course.Price$</p>
-                        <a asp-action="AddToCart" asp-route-id="@course.Id" asp-controller="Cart" class="card-btn">Add To Cart</a>
-                        <a asp-action="Update" asp-route-id="@course.Id" asp-controller="Book" class="btn up-btn">Update</a>
+                        <a asp-action="AddToCart" asp-route-id="@course.Id" asp-route-type="course" asp-controller="Cart" class="card-btn">Add To Cart</a>
+                        <a asp-action="Update" asp-route-id="@course.Id" asp-controller="Course" class="btn up-btn">Update</a>
                     </div>
                 </div>
             }
