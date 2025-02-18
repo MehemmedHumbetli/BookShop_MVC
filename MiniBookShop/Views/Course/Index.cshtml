@@ -133,23 +133,21 @@
 <body>
 
     <div class="container">
-        <h2>Book List</h2>
+        <h2>Course List</h2>
 
         <div class="book-grid">
-            @foreach (var book in Model)
+            @foreach (var course in Model)
             {
                 <div class="card">
-                    <img src="@book." class="card-img-top" alt="No Image">
+                    <img src="@course.ImagePath" class="card-img-top" alt="No Image">
                     <div class="card-content">
-                        <h5>@book.Name</h5>
-                        <p><strong>Author:</strong> @book.Author</p>
-                        <p><strong>Genre:</strong> @book.Genre</p>
-                        <p><strong>Pages:</strong> @book.Pages</p>
-                        <p><strong>ReadCount:</strong> @book.ReadCount</p>
-                        <p style="color: #ffcc66"><strong>Price:</strong>@book.Price$</p>
-                        <p class="description">@book.Decription</p>
-                        <a asp-action="AddToCart" asp-route-id="@book.Id" asp-controller="Cart" class="card-btn">Add To Cart</a>
-                        <a asp-action="Update" asp-route-id="@book.Id" asp-controller="Book" class="btn up-btn">Update</a>
+                        <h5>@course.Name</h5>
+                        <p><strong>Duration:</strong> @course.Duration</p>
+                        <p><strong>Price:</strong> @course.Price</p>
+                        <p><strong>Requierd Skills:</strong> @course.Required_Skills</p>
+                        <p style="color: #ffcc66"><strong>Price:</strong>@course.Price$</p>
+                        <a asp-action="AddToCart" asp-route-id="@course.Id" asp-controller="Cart" class="card-btn">Add To Cart</a>
+                        <a asp-action="Update" asp-route-id="@course.Id" asp-controller="Book" class="btn up-btn">Update</a>
                     </div>
                 </div>
             }

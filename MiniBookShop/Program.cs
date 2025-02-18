@@ -22,6 +22,9 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IBookDal, EFBookDal>();
 builder.Services.AddScoped<IBookService, BookService>();
 
+builder.Services.AddScoped<ICourseDal, EFCourseDal>();
+builder.Services.AddScoped<ICourseService, CourseService>();
+
 builder.Services.AddScoped<ICartService, CartService>();
 
 builder.Services.AddDbContext<ShopDbContext>(options =>

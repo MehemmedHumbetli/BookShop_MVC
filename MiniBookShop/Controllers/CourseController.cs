@@ -73,6 +73,7 @@ namespace MiniBookShop.Controllers
             courseInDb.Duration = model.Course.Duration;
             courseInDb.Price = model.Course.Price;
             courseInDb.Required_Skills = model.Course.Required_Skills;
+            courseInDb.ImagePath = model.Course.ImagePath;
 
             _courseService.Update(courseInDb);
             return RedirectToAction("Index");

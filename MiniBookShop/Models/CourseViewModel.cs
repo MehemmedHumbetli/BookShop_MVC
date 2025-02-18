@@ -10,5 +10,6 @@ namespace MiniBookShop
         public int Duration { get; set; }
         public int Price { get; set; }
         public string Required_Skills { get; set; }
+        public string ImagePath { get; set; }
     }
 }
