@@ -69,5 +69,27 @@ namespace MiniBookShop.Controllers
             _cartSessionService.SetCart(cart);
             return RedirectToAction("List");
         }
+
+        [HttpGet]
+        public IActionResult Checkout()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Checkout(string cardName, string cardNumber, string expiryDate, string cvv)
+        {
+            if (string.IsNullOrWhiteSpace(cardName) ||
+                string.IsNullOrWhiteSpace(cardNumber) || cardNumber.Length != 16 ||
+                string.IsNullOrWhiteSpace(expiryDate) || !expiryDate.Contains("/") ||
+                string.IsNullOrWhiteSpace(cvv) || cvv.Length != 3)
+            {
+                TempData["message"] = "Please enter valid payment details!";
+                return View();
+            }
+
+            return RedirectToAction("Index", "Cart");
+        }
+
     }
 }

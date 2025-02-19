@@ -1,52 +1,36 @@
-﻿@model BookViewModel
-
+﻿@model CourseViewModel
 
 <div class="container mt-5 d-flex justify-content-center">
     <div class="card book-card p-4">
-        <h2 class="text-center mb-4">📚 Add New Book</h2>
+        <h2 class="text-center mb-4">📚 Add New Course</h2>
         <form asp-action="Add" method="post" enctype="multipart/form-data">
             <div class="form-group">
-                <label>Book Name</label>
-                <input asp-for="Book.Name" class="form-control" placeholder="Enter book name">
+                <label>Course Name</label>
+                <input asp-for="Course.Name" class="form-control" placeholder="Enter course name">
             </div>
 
             <div class="form-group">
-                <label>Author</label>
-                <input asp-for="Book.Author" class="form-control" placeholder="Enter author's name">
+                <label>Course Duration</label>
+                <input asp-for="Course.Duration" class="form-control" placeholder="Enter duration">
             </div>
 
             <div class="form-group">
-                <label >Genre</label>
-                <input asp-for="Book.Genre" class="form-control" placeholder="Enter genre">
-            </div>
-
-            <div class="form-group">
-                <label>Pages</label>
-                <input asp-for="Book.Pages" type="number" class="form-control" placeholder="Enter page count">
-            </div>
-
-            <div class="form-group">
-                <label>Read Count</label>
-                <input asp-for="Book.ReadCount" type="number" class="form-control" placeholder="Enter read count">
-            </div>
-
-            <div class="form-group">
-                <label>Description</label>
-                <textarea asp-for="Book.Decription" class="form-control" rows="3" placeholder="Enter description"></textarea>
+                <label>Required Skills</label>
+                <textarea asp-for="Course.Required_Skills" class="form-control" rows="3" placeholder="Enter skills"></textarea>
             </div>
 
             <div class="form-group">
                 <label>Image Path</label>
-                <input asp-for="Book.ImagePath" type="text" class="form-control" placeholder="Enter image path">
+                <input asp-for="Course.ImagePath" type="text" class="form-control" placeholder="Enter image path">
             </div>
 
             <div class="form-group">
                 <label>Price ($)</label>
-                <input asp-for="Book.Price" type="number" class="form-control" placeholder="Enter price">
+                <input asp-for="Course.Price" type="number" class="form-control" placeholder="Enter price">
             </div>
 
 
-            <button type="submit" class="btn btn-primary btn-block add-btn">Add Book</button>
+            <button type="submit" class="btn btn-primary btn-block add-btn">Add Course</button>
         </form>
     </div>
 </div>
