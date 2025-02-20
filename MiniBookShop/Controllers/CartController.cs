@@ -73,6 +73,7 @@ namespace MiniBookShop.Controllers
         [HttpGet]
         public IActionResult Checkout()
         {
+
             return View();
         }
 
