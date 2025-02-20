@@ -88,7 +88,7 @@ namespace MiniBookShop.Controllers
                 return View();
             }
 
-            return RedirectToAction("Index", "Cart");
+            return RedirectToAction("List", "Cart");
         }
 
     }
